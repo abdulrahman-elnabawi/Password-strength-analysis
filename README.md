@@ -16,14 +16,16 @@ This project provides a Python-based tool to evaluate the strength of passwords.
 #### Example Usage:
 
 {
-  password = "p@S5w0rD!9#"
+
+     password = "p@S5w0rD!9#"
+ 
 }
 
 
 #### Example Output:
 
 {
-    "length": 11,
+   "length": 11,
     "complexity": {
         "lowercase": true,
         "uppercase": true,
@@ -44,18 +46,17 @@ This project provides a Python-based tool to evaluate the strength of passwords.
 
 
  {
-
  
-def load_common_passwords(file_path):
-    try:
-        with open(file_path, 'r') as file:
-            passwords = file.read().splitlines()
-        return passwords
-    except FileNotFoundError:
-        print("Error: File not found.")
-        return []
-
-COMMON_PASSWORDS = set(load_common_passwords("2020-200_most_used_passwords.txt"))
+    def load_common_passwords(file_path):
+        try:
+            with open(file_path, 'r') as file:
+                passwords = file.read().splitlines()
+            return passwords
+        except FileNotFoundError:
+            print("Error: File not found.")
+            return []
+    
+    COMMON_PASSWORDS = set(load_common_passwords("2020-200_most_used_passwords.txt"))
 
 
 }
