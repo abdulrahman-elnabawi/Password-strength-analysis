@@ -17,7 +17,7 @@ This project provides a Python-based tool to evaluate the strength of passwords.
 
 {
 
-     password = "p@S5w0rD!9#"
+      password = "p@S5w0rD!9#"
  
 }
 
@@ -25,20 +25,20 @@ This project provides a Python-based tool to evaluate the strength of passwords.
 #### Example Output:
 
 {
-   "length": 11,
-    "complexity": {
+
+     "length": 11,
+     "complexity": {
         "lowercase": true,
         "uppercase": true,
         "digits": true,
         "specials": true
-    },
-    "entropy": 71.27,
-    "is_common": false,
-    "score": 8,
-    "strength": "Strong"
+     },
+     "entropy": 71.27,
+     "is_common": false,
+     "score": 8,
+     "strength": "Strong"
+ 
 }
-
-
 
 ## Loading External Password Lists
 
