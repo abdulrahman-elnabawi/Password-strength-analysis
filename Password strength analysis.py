@@ -2,7 +2,18 @@ import math
 import re
 
 #list that can be guessed easily
-COMMON_PASSWORDS = ["123456", "password", "123456789", "qwerty", "abc123", "letmein"]
+def load_common_passwords(file_path):
+    
+    try:
+        with open(file_path, 'r') as file:
+            passwords = file.read().splitlines()  
+        return passwords
+    except FileNotFoundError:
+        print("Error: File not found. Please check the file path.")
+        return []
+
+COMMON_PASSWORDS = load_common_passwords("2020-200_most_used_passwords.txt")
+
 
 def calculate_entropy(password):
     
@@ -15,7 +26,7 @@ def calculate_entropy(password):
     return len(password) * math.log2(char_types)
  
 def analyze_password(password):
-
+    is_common = password.lower() in COMMON_PASSWORDS
     length = len(password)
     complexity = {
         "lowercase": bool(re.search(r'[a-z]', password)),
