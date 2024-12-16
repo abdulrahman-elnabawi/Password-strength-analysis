@@ -26,7 +26,7 @@ def calculate_entropy(password):
     return len(password) * math.log2(char_types)
  
 def analyze_password(password):
-    is_common = password.lower() in COMMON_PASSWORDS
+    is_common = password in COMMON_PASSWORDS
     length = len(password)
     complexity = {
         "lowercase": bool(re.search(r'[a-z]', password)),
@@ -36,7 +36,7 @@ def analyze_password(password):
     }
 
     entropy = calculate_entropy(password)
-    is_common = password.lower() in COMMON_PASSWORDS
+    is_common = password in COMMON_PASSWORDS
 
     score = 0
     if length >= 12: score += 2
